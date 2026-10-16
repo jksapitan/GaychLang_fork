@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build GaychLang",
+      "type": "shell",
+      "command": "./build.sh",
+      "windows": { "command": ".\\build.bat" },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run current .gaych file",
+      "type": "shell",
+      "command": "java -jar dist/GaychLang.jar \"${file}\"",
+      "dependsOn": "Build GaychLang",
+      "presentation": { "reveal": "always", "panel": "dedicated", "focus": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Open GaychLang IDE",
+      "type": "shell",
+      "command": "java -jar dist/GaychLang.jar",
+      "dependsOn": "Build GaychLang",
+      "problemMatcher": []
+    }
+  ]
+}

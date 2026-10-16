@@ -1,0 +1,22 @@
+{
+  "name": "gaychlang",
+  "displayName": "GaychLang",
+  "description": "Syntax highlighting for GaychLang (.gaych)",
+  "version": "1.0.0",
+  "publisher": "gaychlang",
+  "engines": { "vscode": "^1.60.0" },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [{
+      "id": "gaych",
+      "aliases": ["GaychLang", "gaych"],
+      "extensions": [".gaych"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "gaych",
+      "scopeName": "source.gaych",
+      "path": "./syntaxes/gaych.tmLanguage.json"
+    }]
+  }
+}

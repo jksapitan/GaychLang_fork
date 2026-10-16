@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "GaychLang IDE",
+      "request": "launch",
+      "mainClass": "gaych.Main"
+    },
+    {
+      "type": "java",
+      "name": "Run examples/hello.gaych",
+      "request": "launch",
+      "mainClass": "gaych.Main",
+      "args": "examples/hello.gaych",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "java",
+      "name": "Run current .gaych file",
+      "request": "launch",
+      "mainClass": "gaych.Main",
+      "args": "${file}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

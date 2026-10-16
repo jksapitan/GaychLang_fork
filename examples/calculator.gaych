@@ -1,0 +1,16 @@
+// A tiny calculator using getch / chika
+gawa calc(a, op, b) {
+    keri (op == "+") { uwi a + b; }
+    keri (op == "-") { uwi a - b; }
+    keri (op == "*") { uwi a * b; }
+    keri (op == "/") { uwi a / b; }
+    keri (op == "%") { uwi a % b; }
+    uwi "Unknown operator: " + op;
+}
+
+bongga {
+    chuchu a = getch("First number: ");
+    eme op = getch("Operator (+ - * / %): ");
+    chuchu b = getch("Second number: ");
+    chika("Result: " + calc(a, op, b));
+}

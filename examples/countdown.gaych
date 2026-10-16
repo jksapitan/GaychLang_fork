@@ -1,0 +1,12 @@
+// The battle-countdown program from the slides, in GaychLang
+bongga {
+    chuchu hp = 3;
+    gora (hp > 0) {
+        keri (hp == 1) {
+            chika("Critical HP!");
+        } ewan {
+            chika(hp);
+        }
+        hp = hp - 1;
+    }
+}

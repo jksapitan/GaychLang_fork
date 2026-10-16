@@ -1,0 +1,7 @@
+// getch = input, chika = output
+bongga {
+    eme name = getch("Ano pangalan mo? ");
+    chuchu age = getch("Ilang taon ka na? ");
+    chika("Kumusta, " + name + "!");
+    chika("Sa susunod na taon, magiging " + (age + 1) + " ka na.");
+}

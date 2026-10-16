@@ -1,0 +1,15 @@
+// subukan / sagip = try / catch
+bongga {
+    subukan {
+        chika(10 / 0);
+    } sagip(e) {
+        chika("Caught: " + e);
+    }
+
+    subukan {
+        chuchu n = getch("Type a number: ");
+        chika("Double of it: " + n * 2);
+    } sagip(err) {
+        chika("That was not a number! (" + err + ")");
+    }
+}

@@ -1,0 +1,18 @@
+// Functions are defined with 'gawa' BEFORE bongga
+gawa factorial(n) {
+    keri (n <= 1) { uwi 1; }
+    uwi n * factorial(n - 1);
+}
+
+gawa fib(n) {
+    keri (n < 2) { uwi n; }
+    uwi fib(n - 1) + fib(n - 2);
+}
+
+bongga {
+    chuchu i = 1;
+    gora (i <= 10) {
+        chika(i + "! = " + factorial(i) + "    fib(" + i + ") = " + fib(i));
+        i = i + 1;
+    }
+}

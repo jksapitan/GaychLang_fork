@@ -1,0 +1,15 @@
+{
+  "scopeName": "source.gaych",
+  "name": "GaychLang",
+  "patterns": [
+    { "name": "comment.line.double-slash.gaych", "match": "//.*$" },
+    { "name": "comment.block.gaych", "begin": "/\\*", "end": "\\*/" },
+    { "name": "string.quoted.double.gaych", "begin": "\"", "end": "\"", "patterns": [{ "name": "constant.character.escape.gaych", "match": "\\\\." }] },
+    { "name": "keyword.control.main.gaych", "match": "\\bbongga\\b" },
+    { "name": "support.function.io.gaych", "match": "\\b(getch|chika)\\b" },
+    { "name": "keyword.control.gaych", "match": "\\b(keri|ewan|gora|subukan|sagip|uwi|gawa)\\b" },
+    { "name": "storage.type.gaych", "match": "\\b(chuchu|eme|charot)\\b" },
+    { "name": "constant.language.gaych", "match": "\\b(winner|chaka)\\b" },
+    { "name": "constant.numeric.gaych", "match": "\\b\\d+(\\.\\d+)?\\b" }
+  ]
+}

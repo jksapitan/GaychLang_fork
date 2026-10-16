@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Launcher:  ./gaych program.gaych   |   ./gaych   (opens the IDE)
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec java -jar "$DIR/dist/GaychLang.jar" "$@"

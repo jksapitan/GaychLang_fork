@@ -1,0 +1,27 @@
+// Showing off the full "bongga" vocabulary
+bongga {
+    chuchu age = 20;
+    eme name = "Ms. Gay";
+    charot done = chaka;
+
+    keri (age > 18) {
+        chika(name + " is an adult");
+    } ewan keri (age == 18) {
+        chika(name + " just turned 18");
+    } ewan {
+        chika(name + " is a minor");
+    }
+
+    chuchu i = 0;
+    gora (i < 3) {
+        chika("gora " + i);
+        i = i + 1;
+    }
+
+    done = winner;
+    keri (done) {
+        chika("winner!");
+        uwi;          // leaves bongga early
+    }
+    chika("never printed");
+}

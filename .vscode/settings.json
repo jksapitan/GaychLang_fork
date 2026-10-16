@@ -1,0 +1,6 @@
+{
+  "java.project.sourcePaths": ["src"],
+  "java.project.outputPath": "out",
+  "files.associations": { "*.gaych": "gaych" },
+  "files.exclude": { "out": true }
+}
