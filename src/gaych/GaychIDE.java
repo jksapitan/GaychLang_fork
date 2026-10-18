@@ -37,7 +37,7 @@ public final class GaychIDE extends JFrame {
     private static final String[][] EXAMPLES = {
             {"Hello World", "hello"}, {"Input / Output", "greeter"}, {"Countdown (from the slides)", "countdown"},
             {"Functions & recursion", "functions"}, {"Calculator", "calculator"}, {"Error handling", "errors"},
-            {"Full vocabulary", "bongga"}};
+            {"Full vocabulary", "bongga"}, {"Switch Case", "pili"}};
 
     private static final String STARTER = """
             // Welcome to GaychLang!
