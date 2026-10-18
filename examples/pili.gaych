@@ -1,0 +1,14 @@
+bongga {
+    chuchu n = 2;
+    pili (n) {
+        kaso 1 { chika("isa"); }
+        kaso 2 { chika("dalawa"); }
+        iba    { chika("ibang number"); }
+    }
+
+    eme cmd = getch("Command? ");
+    pili (cmd) {
+        kaso "go"   { chika("Going!"); }
+        kaso "stop" { chika("Stopping!"); }
+    }
+}

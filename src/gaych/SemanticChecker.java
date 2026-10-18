@@ -61,6 +61,11 @@ public final class SemanticChecker {
         } else if (s instanceof While w) {
             expr(w.cond());
             block(w.body());
+        } else if (s instanceof Switch sw) {
+            expr(sw.subject());
+            for (Expr c : sw.cases()) expr(c);
+            for (Block body : sw.bodies()) block(body);
+            if (sw.otherwise() != null) block(sw.otherwise());
         } else if (s instanceof Try t) {
             block(t.body());
             push();

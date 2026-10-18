@@ -21,7 +21,7 @@ import javax.swing.text.*;
 public final class GaychIDE extends JFrame {
 
     private static final Color BG = new Color(0x1e1e2e), FG = new Color(0xcdd6f4), GUTTER = new Color(0x181825),
-            GUTTER_FG = new Color(0x6c7086), KEYWORD = new Color(0xf5c2e7), TYPE = new Color(0xf783ac),
+            GUTTER_FG = new Color(0x6c7086), TYPE = new Color(0xf783ac),
             LITERAL = new Color(0xffe066), STRING = new Color(0x8ce99a), COMMENT = new Color(0x6c7086),
             NUMBER = new Color(0xffa94d), ERROR = new Color(0xff6b6b), ACCENT = new Color(0xda77f2);
 
@@ -71,7 +71,7 @@ public final class GaychIDE extends JFrame {
     private static final Pattern TOKENS = Pattern.compile(
             "(?<comment>//[^\\n]*|/\\*[\\s\\S]*?\\*/)"
                     + "|(?<string>\"(?:\\\\.|[^\"\\\\\\n])*\")"
-                    + "|(?<keyword>\\b(?:bongga|gawa|keri|ewan|gora|subukan|sagip|uwi|getch|chika)\\b)"
+                    + "|(?<keyword>\\b(?:bongga|gawa|keri|ewan|gora|subukan|sagip|uwi|getch|chika|pili|kaso|iba)\\b)"
                     + "|(?<type>\\b(?:chuchu|eme|charot)\\b)"
                     + "|(?<literal>\\b(?:winner|chaka)\\b)"
                     + "|(?<number>\\b\\d+(?:\\.\\d+)?\\b)");

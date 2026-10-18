@@ -23,6 +23,7 @@ public final class Ast {
     public record Block(List<Stmt> stmts) implements Stmt {}
     public record Decl(String type, String name, Expr init, int line) implements Stmt {}
     public record Assign(String name, Expr value, int line) implements Stmt {}
+    public record Switch(Expr subject, List<Expr> cases, List<Block> bodies, Block otherwise, int line) implements Stmt {}
     /** chika(expr); */
     public record Print(Expr value, int line) implements Stmt {}
     public record ExprStmt(Expr expr, int line) implements Stmt {}

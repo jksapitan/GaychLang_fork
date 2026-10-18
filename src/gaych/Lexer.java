@@ -28,7 +28,10 @@ public final class Lexer {
             Map.entry("chika", Type.PRINT),
             Map.entry("getch", Type.INPUT),
             Map.entry("winner", Type.TRUE),
-            Map.entry("chaka", Type.FALSE));
+            Map.entry("chaka", Type.FALSE),
+            Map.entry("pili", Type.SWITCH),
+            Map.entry("kaso", Type.CASE),
+            Map.entry("iba", Type.DEFAULT));
 
     private final String src;
     private int pos = 0;

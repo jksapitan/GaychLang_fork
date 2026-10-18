@@ -80,6 +80,17 @@ public final class Interpreter {
             else if (i.otherwise() != null) execBlock(i.otherwise(), env);
         } else if (s instanceof While w) {
             while (truthy(eval(w.cond(), env), w.line())) { tick(); execBlock(w.body(), env); }
+        } else if (s instanceof Switch sw) {
+            Object subject = eval(sw.subject(), env);
+            boolean matched = false;
+            for (int i = 0; i < sw.cases().size(); i++) {
+                if (equal(subject, eval(sw.cases().get(i), env))) {
+                    execBlock(sw.bodies().get(i), env);
+                    matched = true;
+                    break;
+                }
+            }
+            if (!matched && sw.otherwise() != null) execBlock(sw.otherwise(), env);
         } else if (s instanceof Try t) {
             try {
                 execBlock(t.body(), env);

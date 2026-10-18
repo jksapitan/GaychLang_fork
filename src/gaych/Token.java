@@ -20,6 +20,9 @@ public record Token(Type type, String text, int line) {
         INPUT,     // getch
         TRUE,      // winner
         FALSE,     // chaka
+        SWITCH,    // pili
+        CASE,      // kaso
+        DEFAULT,   // iba
         // punctuation / operators
         LPAREN, RPAREN, LBRACE, RBRACE, COMMA, SEMI,
         ASSIGN, PLUS, MINUS, STAR, SLASH, PERCENT,

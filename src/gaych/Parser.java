@@ -24,6 +24,7 @@ import java.util.List;
  * term      -> factor (('+'|'-') factor)* ; factor -> unary (('*'|'/'|'%') unary)*
  * unary     -> ('-'|'!') unary | primary
  * primary   -> NUMBER | STRING | 'winner' | 'chaka' | 'getch' '(' expr? ')' | IDENT ('(' args ')')? | '(' expr ')'
+ * switchStmt-> 'pili' '(' expr ')' '{' ('kaso' expr block)* ('iba' block)? '}'
  */
 public final class Parser {
     private final List<Token> toks;
@@ -85,6 +86,7 @@ public final class Parser {
                 return new Print(e, t.line());
             }
             case IF: return ifStmt();
+            case SWITCH: return switchStmt();
             case WHILE: {
                 advance();
                 expect(Type.LPAREN, "'(' after gora");
@@ -143,6 +145,34 @@ public final class Parser {
             else other = block();
         }
         return new If(c, then, other, line);
+    }
+
+    private Stmt switchStmt() {
+        int line = advance().line(); // pili
+        expect(Type.LPAREN, "'(' after pili");
+        Expr subject = expr();
+        expect(Type.RPAREN, "')'");
+        expect(Type.LBRACE, "'{'");
+
+        List<Expr> cases = new ArrayList<>();
+        List<Block> bodies = new ArrayList<>();
+        Block other = null;
+
+        while (!check(Type.RBRACE)) {
+            if (check(Type.EOF)) throw err("Missing '}' before end of file");
+            if (match(Type.CASE)) {
+                cases.add(expr());
+                bodies.add(block());
+            } else if (check(Type.DEFAULT)) {
+                if (other != null) throw err("A pili can only have one 'iba'");
+                    advance();
+                    other = block();
+            } else {
+                throw err("Expected 'kaso' or 'iba' inside pili, found " + describe(cur()));
+            }
+        }
+        advance(); // }
+        return new Switch(subject, cases, bodies, other, line);
     }
 
     // ---------- expressions ----------

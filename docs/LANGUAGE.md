@@ -24,6 +24,9 @@ bongga {
 | `gora` | while loop |
 | `subukan` / `sagip(e)` | try / catch |
 | `uwi` | return (inside `bongga` it ends the program) |
+| `pili` |
+| `kaso` |
+| `iba` |
 
 ## Types and conversion
 - `chuchu x = getch("n? ");` converts the typed text to a number (error if invalid).
